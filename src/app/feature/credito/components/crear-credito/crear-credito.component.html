@@ -1,0 +1,67 @@
+<form [formGroup]="credito">
+    <div class="container">
+        <h2>Creación de solicitud de crédito</h2>
+        <div class="row">
+            <div class="col-sm-3">
+                <label for="tipoIdentificacion">Tipo de identificación:</label>
+            </div>
+            <div class="col-sm-3">
+                <select class="form-control" formControlName="tipoIdentificacion" >
+                    <option [ngValue]="null"  disabled>Seleccione ...</option>
+                    <option *ngFor="let documento of documentos" [ngValue]="documento.codigo" >{{documento.nombre}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <label for="numeroIdentificacion">Número de identificación:</label>
+            </div>
+            <div class="col-sm-3">
+                <input type="text" id="numeroIdentificacion"  formControlName="numeroIdentificacion">
+            </div>
+            <div class="col-sm-6" *ngIf="credito.get('numeroIdentificacion').invalid && credito.get('numeroIdentificacion').dirty">
+            <div *ngIf="credito.get('numeroIdentificacion').errors.required">El numero de identificacion es requerido</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <label for="ingresosMensuales">Ingresos mensuales:</label>
+            </div>
+            <div class="col-sm-3">
+                <input type="text" formControlName="ingresoMensual"
+                    angularFormsMask="simpleCurrency">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <label for="egresosMensuales">Gastos mensuales:</label>
+            </div>
+            <div class="col-sm-3">
+                <input type="text"  formControlName="egresoMensual">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <label for="plazo">Plazo del crédito:</label>
+            </div>
+            <div class="col-sm-3">
+                <select class="form-control" formControlName="plazo">
+                    <option [ngValue]="null" disabled>Seleccione ...</option>
+                    <option *ngFor = "let plazo of plazos" [ngValue]="plazo.codigo">{{plazo.nombre}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3">
+                <input type="submit" (click)="guardar()" [disabled]="!credito.valid" value="Guardar">
+            </div>
+        </div>
+        <div *ngIf="1 != 1">
+            <input type="text"  value="USD" formControlName="codigoMoneda">
+            <input type="text"  value="100" formControlName="tasaCambio">
+        </div>
+
+    </div>  
+</form>

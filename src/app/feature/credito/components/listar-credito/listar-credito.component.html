@@ -1,0 +1,40 @@
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Identificacion</th>
+        <th scope="col">Ingresos</th>
+        <th scope="col">Egresos</th>
+        <th scope="col">Plazo</th>
+        <th scope="col">Valor concedido</th>
+        <th scope="col">Pago primera cuota</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let credito of listaCreditos ">
+        <td>
+          {{credito.id}}
+        </td>
+        <td>
+          {{credito.numeroIdentificacion}}
+        </td>
+        <td>
+          {{credito.ingresoMensual}}
+        </td>
+        <td>
+          {{credito.egresoMensual}}
+        </td>
+        <td>
+          {{credito.plazo}}
+        </td>
+        <td>
+          {{credito.valorPrestamo}}
+        </td>
+        <td>
+          {{credito.fechaPrimeraCuota}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
