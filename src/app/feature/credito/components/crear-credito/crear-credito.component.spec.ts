@@ -1,7 +1,5 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import {  waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CrearCreditoComponent } from './crear-credito.component';
 
@@ -9,7 +7,7 @@ describe('CrearCreditoComponent', () => {
   let component: CrearCreditoComponent;
   let fixture: ComponentFixture<CrearCreditoComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ CrearCreditoComponent ]
     })
