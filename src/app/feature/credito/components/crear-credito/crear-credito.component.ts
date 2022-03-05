@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Plazo } from './../../shared/model/plazo';
 import { Documento } from './../../shared/model/documento';
 import { CreditoService } from './../../shared/service/credito.service';
-import { Credito } from '../../shared/model/credito';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-crear-credito',
@@ -18,14 +18,26 @@ export class CrearCreditoComponent implements OnInit {
                         new Documento('P','Pasaporte'), 
                         new Documento('O','Otro')];
   submitted=false;
-  private creditoIngresado: Credito;
   public credito: FormGroup;
-
-  constructor(private creditoService: CreditoService, private formBuilder: FormBuilder) { 
+  constructor(private creditoService: CreditoService, 
+      private formBuilder: FormBuilder,
+      private router: Router) { 
     
   }
 
   ngOnInit() {
+    this.crearFormulario();
+  }
+
+  public guardar() {
+    this.credito.get('codigoMoneda').setValue('USD');
+    this.credito.get('tasaCambio').setValue(3982.12);
+    this.creditoService.guardar(this.credito.value);
+    this.credito.reset;
+    this.router.navigate(['listar']);
+  }
+
+  private crearFormulario() {
     this.credito = this.formBuilder.group({
       tipoIdentificacion: ['', Validators.required],
       numeroIdentificacion: ['', Validators.required],
@@ -36,21 +48,4 @@ export class CrearCreditoComponent implements OnInit {
       plazo: ['', Validators.required]
     });
   }
-
-  guardar() {
-    this.asignarValoresIngresados();
-    this.creditoService.guardar(this.creditoIngresado);
-  }
-
-  private asignarValoresIngresados() {
-    this.creditoIngresado.tipoIdentificacion = this.credito.get('tipoIdentificacion').value;
-    this.creditoIngresado.numeroIdentificacion = this.credito.get('numeroIdentificacion').value;
-    this.creditoIngresado.ingresoMensual = this.credito.get('ingresoMensual').value;
-    this.creditoIngresado.egresoMensual = this.credito.get('egresoMensual').value;
-    this.creditoIngresado.plazo = this.credito.get('plazo').value;
-    this.creditoIngresado.codigoMoneda='USD';
-    this.creditoIngresado.tasaCambio=3982.12;
-
-  }
-
 }
