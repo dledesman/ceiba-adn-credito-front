@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Plazo } from './../../shared/model/plazo';
 import { Documento } from './../../shared/model/documento';
 import { CreditoService } from './../../shared/service/credito.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-crear-credito',
@@ -30,7 +31,11 @@ export class CrearCreditoComponent implements OnInit {
   public guardar() {
     this.credito.get('codigoMoneda').setValue('USD');
     this.credito.get('tasaCambio').setValue(3982.12);
-    this.creditoService.guardar(this.credito.value).subscribe(data => console.log(data));
+    this.creditoService.guardar(this.credito.value).subscribe(data => 
+      { console.log(data)},
+      (err: HttpErrorResponse) => {
+        console.log(err.error.mensajeError);
+      });
   }
     
   private crearFormulario() {
