@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-credito',
@@ -9,16 +8,7 @@ import { FormBuilder } from '@angular/forms';
 export class CreditoComponent implements OnInit {
 
   public credito;
-  constructor(formBuilder: FormBuilder) { 
-    this.credito = formBuilder.group({
-      tipoIdentificacion: [''],
-      numeroIdentificacion: [''],
-      ingresosMensuales: [''],
-      egresosMensauales: [''],
-      plazo: [''],
-    });
-
-  }
+  constructor() { }
 
   ngOnInit() {
   }

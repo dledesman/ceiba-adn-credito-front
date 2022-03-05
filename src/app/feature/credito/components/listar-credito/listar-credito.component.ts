@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Credito } from '../../shared/model/credito';
-import { CreditoListarService } from '../../shared/service/credito-listar.service';
+import { CreditoService } from '../../shared/service/credito.service';
 
 @Component({
   selector: 'app-listar-credito',
@@ -8,14 +9,14 @@ import { CreditoListarService } from '../../shared/service/credito-listar.servic
   styleUrls: ['./listar-credito.component.css']
 })
 export class ListarCreditoComponent implements OnInit {
-  listaCreditos: Credito [] = [];
-  constructor(private creditoListarService: CreditoListarService){
+  listaCreditos: Observable<Credito[]>
+  constructor(private creditoService: CreditoService){
     
    }
 
    
   ngOnInit(): void {
-      this.creditoListarService.obtenerCreditos().subscribe(credito => this.listaCreditos = credito);
+    this.listaCreditos = this.creditoService.consultar();
   }
 
 }

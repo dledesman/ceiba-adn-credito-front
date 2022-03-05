@@ -12,7 +12,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let credito of listaCreditos ">
+      <tr *ngFor="let credito of listaCreditos | async">
         <td>
           {{credito.id}}
         </td>

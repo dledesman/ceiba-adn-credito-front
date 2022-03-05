@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Plazo } from './../../shared/model/plazo';
 import { Documento } from './../../shared/model/documento';
-import { CreditoCrearService } from './../../shared/service/credito-crear.service';
+import { CreditoService } from './../../shared/service/credito.service';
 import { Credito } from '../../shared/model/credito';
 
 @Component({
@@ -18,10 +18,10 @@ export class CrearCreditoComponent implements OnInit {
                         new Documento('P','Pasaporte'), 
                         new Documento('O','Otro')];
   submitted=false;
-  private creditoIngresado: Credito = new Credito();
+  private creditoIngresado: Credito;
   public credito: FormGroup;
 
-  constructor(private servicio: CreditoCrearService, private formBuilder: FormBuilder) { 
+  constructor(private creditoService: CreditoService, private formBuilder: FormBuilder) { 
     
   }
 
@@ -39,7 +39,7 @@ export class CrearCreditoComponent implements OnInit {
 
   guardar() {
     this.asignarValoresIngresados();
-    this.servicio.guardarCredito(this.creditoIngresado);
+    this.creditoService.guardar(this.creditoIngresado);
   }
 
   private asignarValoresIngresados() {
