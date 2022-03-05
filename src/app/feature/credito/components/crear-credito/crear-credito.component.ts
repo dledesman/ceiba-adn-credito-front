@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Plazo } from './../../shared/model/plazo';
 import { Documento } from './../../shared/model/documento';
 import { CreditoService } from './../../shared/service/credito.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-crear-credito',
@@ -20,8 +19,7 @@ export class CrearCreditoComponent implements OnInit {
   submitted=false;
   public credito: FormGroup;
   constructor(private creditoService: CreditoService, 
-      private formBuilder: FormBuilder,
-      private router: Router) { 
+      private formBuilder: FormBuilder) { 
     
   }
 
@@ -32,11 +30,9 @@ export class CrearCreditoComponent implements OnInit {
   public guardar() {
     this.credito.get('codigoMoneda').setValue('USD');
     this.credito.get('tasaCambio').setValue(3982.12);
-    this.creditoService.guardar(this.credito.value);
-    this.credito.reset;
-    this.router.navigate(['listar']);
+    this.creditoService.guardar(this.credito.value).subscribe(data => console.log(data));
   }
-
+    
   private crearFormulario() {
     this.credito = this.formBuilder.group({
       tipoIdentificacion: ['', Validators.required],
