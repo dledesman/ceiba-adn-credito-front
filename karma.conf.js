@@ -17,10 +17,10 @@ module.exports = function (config) {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
     remapIstanbulReporter: {
-      dir : 'reports/test-results/coverage',
+      dir : 'reports/coverage/app-base',
       reports: {
         html: 'coverage',
-        lcovonly: 'reports/test-results/coverage/coverage.lcov'
+        lcovonly: 'reports/coverage/app-base/coverage.lcov'
       }
     },
     coverageIstanbulReporter: {
@@ -38,7 +38,7 @@ module.exports = function (config) {
       dir: 'reports/html/'
     },
     junitReporter: {
-      outputDir: 'reports/unit',
+      outputDir: 'test-results',
       outputFile: 'test-results.xml',
       suite: '',
       useBrowserName: false
