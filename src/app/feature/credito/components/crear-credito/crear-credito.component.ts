@@ -48,5 +48,6 @@ export class CrearCreditoComponent implements OnInit {
       tasaCambio: [''],
       plazo: ['', Validators.required]
     });
+
   }
 }

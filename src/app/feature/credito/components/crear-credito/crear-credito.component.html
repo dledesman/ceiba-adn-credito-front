@@ -1,5 +1,5 @@
-<form [formGroup]="credito">
-    <div class="container">
+<form >
+    <div class="container" [formGroup]="credito">
         <h2>Creación de solicitud de crédito</h2>
         <div class="row">
             <div class="col-sm-3">
@@ -52,16 +52,16 @@
                 </select>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-3"></div>
-            <div class="col-sm-3">
-                <input type="submit" id="guardar" [disabled]="!credito.valid"  value="Guardar">
-            </div>
-        </div>
         <div *ngIf="1 != 1">
             <input type="text"  value="USD" formControlName="codigoMoneda">
             <input type="text"  value="100" formControlName="tasaCambio">
         </div>
-
-    </div>  
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3">
+                <input type="submit" id="botonGuardar" (click)="guardar()"
+                    value="Guardar" [disabled]=!credito.valid>
+            </div>
+        </div>
+    </div>      
 </form>
