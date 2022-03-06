@@ -2,51 +2,51 @@
     <div class="container" [formGroup]="credito">
         <h2>Creación de solicitud de crédito</h2>
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-lg-3 col-sm-6">
                 <label for="tipoIdentificacion">Tipo de identificación:</label>
             </div>
-            <div class="col-sm-3">
-                <select class="form-control" id='tipoIdentificacion' formControlName="tipoIdentificacion">
-                    <option [ngValue]="null"  disabled>Seleccione ...</option>
+            <div class="col-lg-3 col-sm-6">
+                <select class="form-select" id='tipoIdentificacion' formControlName="tipoIdentificacion">
+                    <option [ngValue]="null" selected disabled>Seleccione ...</option>
                     <option *ngFor="let documento of documentos" [ngValue]="documento.codigo" >{{documento.nombre}}</option>
                 </select>
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-lg-3 col-sm-6">
                 <label for="numeroIdentificacion">Número de identificación:</label>
             </div>
-            <div class="col-sm-3">
-                <input type="text" id="numeroIdentificacion"  formControlName="numeroIdentificacion">
+            <div class="col-lg-3 col-sm-6">
+                <input class="form-control" type="text" id="numeroIdentificacion"  formControlName="numeroIdentificacion" placeholder="170201200189">
             </div>
-            <div class="col-sm-6" *ngIf="credito.get('numeroIdentificacion').invalid && credito.get('numeroIdentificacion').dirty">
+            <div class="col-lg-3 col-sm-6" *ngIf="credito.get('numeroIdentificacion').invalid && credito.get('numeroIdentificacion').dirty">
             <div *ngIf="credito.get('numeroIdentificacion').errors.required">El numero de identificacion es requerido</div>
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-lg-3 col-sm-6">
                 <label for="ingresosMensuales">Ingresos mensuales:</label>
             </div>
-            <div class="col-sm-3">
-                <input type="text" formControlName="ingresoMensual" id="ingresoMensual"
+            <div class="col-lg-3 col-sm-6">
+                <input class="form-control" type="text" formControlName="ingresoMensual" id="ingresoMensual"
                     angularFormsMask="simpleCurrency">
 
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-lg-3 col-sm-6">
                 <label for="egresosMensuales">Gastos mensuales:</label>
             </div>
-            <div class="col-sm-3">
-                <input type="text"  formControlName="egresoMensual" id="egresoMensual">
+            <div class="col-lg-3 col-sm-6">
+                <input class="form-control" type="text"  formControlName="egresoMensual" id="egresoMensual">
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-lg-3 col-sm-6">
                 <label for="plazo">Plazo del crédito:</label>
             </div>
-            <div class="col-sm-3">
-                <select class="form-control" formControlName="plazo" id="plazo">
+            <div class="col-lg-3 col-sm-6">
+                <select class="form-select" formControlName="plazo" id="plazo">
                     <option [ngValue]="null" disabled>Seleccione ...</option>
                     <option *ngFor = "let plazo of plazos" [ngValue]="plazo.codigo">{{plazo.nombre}}</option>
                 </select>
@@ -56,11 +56,12 @@
             <input type="text"  value="USD" formControlName="codigoMoneda">
             <input type="text"  value="100" formControlName="tasaCambio">
         </div>
-        <div class="row">
-            <div class="col-sm-3"></div>
-            <div class="col-sm-3">
+        <br>
+        <div class="row" >
+            <div class="col-lg-3 col-sm-6"></div>
+            <div class="col-lg-3 col-sm-6">
                 <input type="submit" id="botonGuardar" (click)="guardar()"
-                    value="Guardar" [disabled]=!credito.valid>
+                    value="Guardar" [disabled]=!credito.valid class="btn btn-primary">
             </div>
         </div>
     </div>      
