@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<testsuite name="Chrome Headless 99.0.4844.51 (Windows 10)" package="" timestamp="2022-03-05T05:43:47" id="0" hostname="DESKTOP-2GI24IG" tests="25" errors="0" failures="0" time="0.496">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/99.0.4844.51 Safari/537.36"/>
+  </properties>
+  <testcase name="NavbarComponent should create" time="0.112" classname="NavbarComponent"/>
+  <testcase name="BorrarProductoComponent should create" time="0.024" classname="BorrarProductoComponent"/>
+  <testcase name="ErrorCamposPlantillaComponent should create" time="0.019" classname="ErrorCamposPlantillaComponent"/>
+  <testcase name="CrearProductoComponent should create" time="0.047" classname="CrearProductoComponent"/>
+  <testcase name="CrearProductoComponent Registrando producto" time="0.021" classname="CrearProductoComponent"/>
+  <testcase name="CrearProductoComponent formulario es invalido cuando esta vacio" time="0.016" classname="CrearProductoComponent"/>
+  <testcase name="ListarProductoComponent should create" time="0.022" classname="ListarProductoComponent"/>
+  <testcase name="SecurityGuard should ..." time="0.004" classname="SecurityGuard"/>
+  <testcase name="ToolbarComponent should create" time="0.012" classname="ToolbarComponent"/>
+  <testcase name="ProductoComponent should create" time="0.028" classname="ProductoComponent"/>
+  <testcase name="ProductoService deberia crear un producto" time="0.009" classname="ProductoService"/>
+  <testcase name="ProductoService deberia eliminar un producto" time="0.006" classname="ProductoService"/>
+  <testcase name="ProductoService should be created" time="0.003" classname="ProductoService"/>
+  <testcase name="ProductoService deberia listar productos" time="0.003" classname="ProductoService"/>
+  <testcase name="CreditoComponent should create" time="0.019" classname="CreditoComponent"/>
+  <testcase name="AppComponent should create the app" time="0.012" classname="AppComponent"/>
+  <testcase name="AppComponent should have as title 'app-base'" time="0.007" classname="AppComponent"/>
+  <testcase name="CrearCreditoComponent should create" time="0.049" classname="CrearCreditoComponent"/>
+  <testcase name="CrearCreditoComponent Registrando credito" time="0.024" classname="CrearCreditoComponent"/>
+  <testcase name="CrearCreditoComponent formulario es invalido cuando esta vacio" time="0.019" classname="CrearCreditoComponent"/>
+  <testcase name="Service: Credito Debería crear una instancia del servicio" time="0.004" classname="Service: Credito"/>
+  <testcase name="Service: Credito deberia crear un producto" time="0.003" classname="Service: Credito"/>
+  <testcase name="Service: Credito deberia listar creditos registrados" time="0.003" classname="Service: Credito"/>
+  <testcase name="HomeComponent should create" time="0.008" classname="HomeComponent"/>
+  <testcase name="ListarCreditoComponent should retornar una lista" time="0.022" classname="ListarCreditoComponent"/>
+  <system-out>
+    <![CDATA[Chrome Headless 99.0.4844.51 (Windows 10) WARN: 'DEPRECATED: DI is instantiating a token "MockLocationStrategy" that inherits its @Injectable decorator but does not provide one itself.
+This will become an error in a future version of Angular. Please add @Injectable() to the "MockLocationStrategy" class.'
+,Chrome Headless 99.0.4844.51 (Windows 10) WARN: 'DEPRECATED: DI is instantiating a token "MockLocationStrategy" that inherits its @Injectable decorator but does not provide one itself.
+This will become an error in a future version of Angular. Please add @Injectable() to the "MockLocationStrategy" class.'
+,Chrome Headless 99.0.4844.51 (Windows 10) WARN: 'DEPRECATED: DI is instantiating a token "MockLocationStrategy" that inherits its @Injectable decorator but does not provide one itself.
+This will become an error in a future version of Angular. Please add @Injectable() to the "MockLocationStrategy" class.'
+,Chrome Headless 99.0.4844.51 (Windows 10) WARN: 'DEPRECATED: DI is instantiating a token "MockLocationStrategy" that inherits its @Injectable decorator but does not provide one itself.
+This will become an error in a future version of Angular. Please add @Injectable() to the "MockLocationStrategy" class.'
+,Chrome Headless 99.0.4844.51 (Windows 10) WARN: 'DEPRECATED: DI is instantiating a token "MockLocationStrategy" that inherits its @Injectable decorator but does not provide one itself.
+This will become an error in a future version of Angular. Please add @Injectable() to the "MockLocationStrategy" class.'
+,Chrome Headless 99.0.4844.51 (Windows 10) WARN: 'DEPRECATED: DI is instantiating a token "MockLocationStrategy" that inherits its @Injectable decorator but does not provide one itself.
+This will become an error in a future version of Angular. Please add @Injectable() to the "MockLocationStrategy" class.'
+,Chrome Headless 99.0.4844.51 (Windows 10) WARN: 'DEPRECATED: DI is instantiating a token "MockLocationStrategy" that inherits its @Injectable decorator but does not provide one itself.
+This will become an error in a future version of Angular. Please add @Injectable() to the "MockLocationStrategy" class.'
+,Chrome Headless 99.0.4844.51 (Windows 10) WARN: 'DEPRECATED: DI is instantiating a token "MockLocationStrategy" that inherits its @Injectable decorator but does not provide one itself.
+This will become an error in a future version of Angular. Please add @Injectable() to the "MockLocationStrategy" class.'
+,Chrome Headless 99.0.4844.51 (Windows 10) WARN: 'DEPRECATED: DI is instantiating a token "MockLocationStrategy" that inherits its @Injectable decorator but does not provide one itself.
+This will become an error in a future version of Angular. Please add @Injectable() to the "MockLocationStrategy" class.'
+,Chrome Headless 99.0.4844.51 (Windows 10) WARN: 'DEPRECATED: DI is instantiating a token "MockLocationStrategy" that inherits its @Injectable decorator but does not provide one itself.
+This will become an error in a future version of Angular. Please add @Injectable() to the "MockLocationStrategy" class.'
+,Chrome Headless 99.0.4844.51 (Windows 10) WARN: 'Spec 'Service: Credito deberia crear un producto' has no expectations.'
+,Chrome Headless 99.0.4844.51 (Windows 10) WARN: 'DEPRECATED: DI is instantiating a token "MockLocationStrategy" that inherits its @Injectable decorator but does not provide one itself.
+This will become an error in a future version of Angular. Please add @Injectable() to the "MockLocationStrategy" class.'
+
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>

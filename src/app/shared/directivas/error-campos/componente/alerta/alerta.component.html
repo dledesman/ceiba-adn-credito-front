@@ -1,0 +1,39 @@
+<!--Mensaje de exito-->
+<div class="alert alert-success row" role="alert" *ngIf="listaAvisos.length">
+  <div class="col-11">
+    <ul>
+      <li  *ngFor="let aviso of listaAvisos">
+        {{aviso}}
+      </li>
+    </ul>
+  </div>
+  <div align="right" class="col-1">
+    <button type="button" class="btn-close" aria-label="Close" (click)="limpiarAvisos()"></button> 
+  </div>
+</div>  
+<!--Mensaje de alerta-->
+<div class="alert alert-warning row" role="alert" *ngIf="listaAdvertencias.length">
+  <div class="col-11">
+    <ul>
+      <li  *ngFor="let advertencia of listaAdvertencias">
+        {{advertencia}}
+      </li>
+    </ul>
+  </div>
+  <div align="right" class="col-1">
+    <button type="button" class="btn-close" aria-label="Close" (click)="limpiarAdvertencias()"></button> 
+  </div>
+</div>
+<!--Mensaje de error-->
+<div class="alert alert-danger row" role="alert" *ngIf="listaErrores.length">
+  <div class="col-11">
+    <ul>
+      <li  *ngFor="let error of listaErrores">
+        {{error}}
+      </li>
+    </ul>
+  </div>
+  <div align="right" class="col-1">
+    <button type="button" class="btn-close" aria-label="Close" (click)="limpiarErrores()"></button> 
+  </div>
+</div>

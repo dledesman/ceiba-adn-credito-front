@@ -1,5 +1,9 @@
 <form >
+    
     <div class="container" [formGroup]="credito">
+        <app-alerta [listaAvisos]="listaAvisos" 
+            [listaAdvertencias]="listaAdvertencias" 
+            [listaErrores]="listaErrores"></app-alerta>
         <h2>Creación de solicitud de crédito</h2>
         <div class="row">
             <div class="col-lg-3 col-sm-6">

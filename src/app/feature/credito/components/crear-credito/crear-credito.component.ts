@@ -11,6 +11,9 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrls: ['./crear-credito.component.css']
 })
 export class CrearCreditoComponent implements OnInit {
+  listaAvisos: string[]=[];
+  listaAdvertencias: string[]=[];
+  listaErrores: string[]=[];
   plazos: Plazo [] = [new Plazo('3','Tres'), 
                       new Plazo('6','Seis'), 
                       new Plazo('12','Doce')];
@@ -21,10 +24,10 @@ export class CrearCreditoComponent implements OnInit {
   public credito: FormGroup;
   constructor(private creditoService: CreditoService, 
       private formBuilder: FormBuilder) { 
-    
   }
 
   ngOnInit() {
+    
     this.crearFormulario();
   }
 
@@ -32,9 +35,15 @@ export class CrearCreditoComponent implements OnInit {
     this.credito.get('codigoMoneda').setValue('USD');
     this.credito.get('tasaCambio').setValue(3982.12);
     this.creditoService.guardar(this.credito.value).subscribe(data => 
-      { console.log(data)},
-      (err: HttpErrorResponse) => {
-        console.log(err.error.mensajeError);
+      { 
+        console.log(data);
+        this.listaAvisos.push("Solicitud de crédito generada correctamente ");
+        this.credito.reset();
+      },
+      (err: HttpErrorResponse) => 
+      {
+        console.log(err.error);
+        this.listaErrores.push("$err.error");
       });
   }
     

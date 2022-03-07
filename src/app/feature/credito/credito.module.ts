@@ -6,12 +6,14 @@ import { CrearCreditoComponent } from './components/crear-credito/crear-credito.
 import { ListarCreditoComponent } from './components/listar-credito/listar-credito.component';
 import { CreditoComponent } from './components/credito/credito.component';
 import { SharedModule } from '@shared/shared.module';
+import { AlertaComponent } from '@shared/directivas/error-campos/componente/alerta/alerta.component';
 
 @NgModule({
   declarations: [
     CrearCreditoComponent,
     ListarCreditoComponent,
-    CreditoComponent
+    CreditoComponent,
+    AlertaComponent
   ],
   imports: [
     CreaditoRoutingModule,
