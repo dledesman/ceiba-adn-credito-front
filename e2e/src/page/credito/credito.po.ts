@@ -1,4 +1,4 @@
-import { by, element } from 'protractor';
+import { by, element, browser } from 'protractor';
 
 export class CreditoPage {
     
@@ -60,5 +60,9 @@ export class CreditoPage {
 
     getTitleListarCredito() {
         return element(by.css('app-listar-credito h2')).getText() as Promise<string>;
+    }
+
+    sleep(tiempoMilisegundos: number){ 
+        browser.sleep(tiempoMilisegundos);
     }
 }

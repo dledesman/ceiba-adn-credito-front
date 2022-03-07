@@ -62,7 +62,12 @@ describe('workspace-project Credito', () => {
         credito.ingresarIngresoMensual(INGRESO_MENSUAL);
         credito.ingresarEgresoMensual(EGRESO_MENSUAL);
         credito.seleccionarPlazo(PLAZO);
-        credito.botonGuardarClic();
+        credito.sleep(2000);
+        /*if (credito.botonGuardarEstado()) {
+            credito.botonGuardarClic();
+        }
+        expect(credito.botonGuardarEstado()).toBeFalse;*/
+
 
     });
 

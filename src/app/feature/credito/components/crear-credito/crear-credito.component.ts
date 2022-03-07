@@ -4,7 +4,7 @@ import { Plazo } from './../../shared/model/plazo';
 import { Documento } from './../../shared/model/documento';
 import { CreditoService } from './../../shared/service/credito.service';
 import { HttpErrorResponse } from '@angular/common/http';
-
+//import { Mensaje } from './../../shared/model/mensaje';
 @Component({
   selector: 'app-crear-credito',
   templateUrl: './crear-credito.component.html',
@@ -42,8 +42,13 @@ export class CrearCreditoComponent implements OnInit {
       },
       (err: HttpErrorResponse) => 
       {
+        let mensaje: string;
+        //let mensajeObjeto: Mensaje;
+        mensaje = JSON.stringify(err.error);
+        
+        console.log(mensaje);
         console.log(err.error);
-        this.listaErrores.push("$err.error");
+        this.listaErrores.push(mensaje);
       });
   }
     
